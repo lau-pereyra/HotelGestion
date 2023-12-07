@@ -99,4 +99,8 @@ public class Cliente {
 		this.fechaNacimiento = fechaNacimiento;
 	}
     
+	public String toString() {
+        return "Cliente: " + nombre + " " + apellido1;
+    }
+	
 }
