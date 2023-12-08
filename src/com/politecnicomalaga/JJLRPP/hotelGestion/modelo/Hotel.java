@@ -97,22 +97,10 @@ public class Hotel {
             if (misClientes[i] == null) {
             	System.out.println("Ingresa tu Nombre");
             	
-            	
-            	
-            	
-            	
-            	
-            	
                 misClientes[i] = nuevoCliente;  
                 bContinuar = false;
                 return true;
                 //Variable busqueda mas facil?
-                
-                
-                
-                
-                
-                
                 
             }
             
