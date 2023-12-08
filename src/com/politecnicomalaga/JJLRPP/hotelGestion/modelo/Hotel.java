@@ -1,5 +1,4 @@
 package com.politecnicomalaga.JJLRPP.hotelGestion.modelo;
-
 public class Hotel {
     
     private static final int NUM_CLIENTES_MAX = 1000;
@@ -92,11 +91,24 @@ public class Hotel {
         for (int i = 0; i< NUM_CLIENTES_MAX && bContinuar == true; i++) {
         	
             if (misClientes[i] == null) {
+            	System.out.println("Ingresa tu Nombre");
+            	
+            	
+            	
+            	
+            	
+            	
             	
                 misClientes[i] = nuevoCliente;  
                 bContinuar = false;
                 return true;
                 //Variable busqueda mas facil?
+                
+                
+                
+                
+                
+                
                 
             }
             
