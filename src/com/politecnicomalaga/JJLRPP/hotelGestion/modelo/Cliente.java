@@ -99,4 +99,10 @@ public class Cliente {
 		this.fechaNacimiento = fechaNacimiento;
 	}
     
+	public String toString() {
+        return "- Nombre: " + nombre + "\n" + "- Primer Apellido: " + apellido1 + "\n" + "- Segundo Apellido: "
+        		+ apellido2 + "\n" + "- Dirección: " + direccion + "\n" + "- DNI: " + dni + "\n" + "- Teléfono: " + telefono 
+        		+ "\n" + "- Email: " + email + "\n" + "- Edad: " + edad + "\n" + "- Fecha de Nacimiento: " + fechaNacimiento;
+    }
+	
 }
