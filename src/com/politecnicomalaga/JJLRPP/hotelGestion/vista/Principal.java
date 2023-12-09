@@ -1,5 +1,5 @@
 package com.politecnicomalaga.JJLRPP.hotelGestion.vista;
-
+import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Promocion;
 import java.util.Scanner;
 
 import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Cliente;
@@ -13,8 +13,9 @@ public class Principal {
    		boolean seguir = true;
    		String respuesta ;
    		Scanner sc = new Scanner(System.in);
-   		
-   		int IDCliente = 0;
+   		Cliente nuevoCliente[] = new Cliente[1000];
+   		   		
+   		int IDCliente = 0 , IDPromo= 0;
    		
 	   	Cliente misClientes[] = new Cliente[1000];
 	   	
@@ -46,7 +47,9 @@ public class Principal {
    				
    				for (cont = 0; cont < IDCliente; cont++) {
    					
-   					System.out.println(misClientes[cont]);
+   					if(misClientes[cont] != null) {
+   						System.out.println(misClientes[cont]);	
+   					}
    					
    				}
    				
@@ -66,8 +69,7 @@ public class Principal {
    				String email = emailAñadeCliente();
    				int edad = edadAñadeCliente();
    				String nacimiento = nacimientoAñadeCliente();
-
-   				Cliente nuevoCliente[] = new Cliente[1000];
+   				
    		   		nuevoCliente[IDCliente] = new Cliente (nombre, apellido1, apellido2, direccion, dni, telefono, email, edad, nacimiento);
    		   		
    		   		misClientes[IDCliente] = nuevoCliente[IDCliente];
@@ -81,12 +83,30 @@ public class Principal {
 
 
    			} else if(respuesta.compareToIgnoreCase("c") == 0) {
-
-
+   				
+   				
+   				System.out.println("Cliente actual:");
+   		   		System.out.println(nuevoCliente[IDCliente-1]);
+   				
+   				nuevoCliente[IDCliente-1] = null;
+   				misClientes[IDCliente-1] = nuevoCliente[IDCliente-1];
+   				System.out.println("Cliente eliminado con exito!");
+   				
    //PROGRAMA D	------------------------------------------------------------------------------------------------------------------------------
    				
    			} else if(respuesta.compareToIgnoreCase("d") == 0) {
+   				
+   				int edadMin = Promocion.edadMinAñadePromo();
+                int edadMax = Promocion.edadMaxAñadePromo();
+                String nombrePromo = Promocion.nombreAñadePromo();
 
+                Promocion nuevaPromo[] = new Promocion[20];
+                   nuevaPromo[IDPromo] = new Promocion ( edadMax, edadMin, nombrePromo);
+                   
+                   System.out.println("Nueva Promocion:");
+                System.out.println(nuevaPromo[IDPromo]);
+            
+                IDPromo++;
    //SALIR	----------------------------------------------------------------------------------------------------------------------------------
    			} else {
    				
