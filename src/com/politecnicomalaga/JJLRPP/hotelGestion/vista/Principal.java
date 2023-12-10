@@ -1,5 +1,5 @@
 package com.politecnicomalaga.JJLRPP.hotelGestion.vista;
-
+import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Promocion;
 import java.util.Scanner;
 import com.politecnicomalaga.JJLRPP.hotelGestion.controlador.Controlador;
 import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Cliente;
@@ -9,6 +9,21 @@ import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Promocion;
 public class Principal {
 	
     public static void main(String[] args) {
+<<<<<<< HEAD
+        //private Controlador trabajador;
+   		boolean seguir = true;
+   		String respuesta ;
+   		Scanner sc = new Scanner(System.in);
+   		Cliente nuevoCliente[] = new Cliente[1000];
+   		   		
+   		int IDCliente = 0 , IDPromo= 0;
+   		
+	   	Cliente misClientes[] = new Cliente[1000];
+	   	
+    	Hotel miHotel[] = new Hotel[1];
+    	miHotel[0] = new Hotel ("Costa del Sol", "Su Casita", "5 Estrellas", "696969",
+    			"+69 696969", "hotel@gmail.com", misClientes);
+=======
     	
    		Scanner sc = new Scanner(System.in);
    		boolean seguir = true;
@@ -16,6 +31,7 @@ public class Principal {
    		
    		Cliente[] misClientes = Hotel.crearClientes();
    		int IDCliente = 0 , IDPromo= 0;
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    		
    		while(seguir) {
 
@@ -35,13 +51,51 @@ public class Principal {
 
    			if (respuesta.compareToIgnoreCase("a") == 0) {
    				
+<<<<<<< HEAD
+   				int cont;
+   				
+   				System.out.println("Lista de Clientes:");
+   				
+   				for (cont = 0; cont < IDCliente; cont++) {
+   					
+   					if(misClientes[cont] != null) {
+   						System.out.println(misClientes[cont]);	
+   					}
+   					
+   				}
+   				
+   				if (cont == 0) {
+   					System.out.println("No existe ningún cliente");
+   				}
+=======
 				Controlador.programaA(IDCliente, misClientes);
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
 
    //PROGRAMA B ------------------------------------------------------------------------------------------------------------------------------	
 				
    			} else if(respuesta.compareToIgnoreCase("b") == 0) {
    				
+<<<<<<< HEAD
+   				String nombre = nombreAñadeCliente();
+   				String apellido1 = apellido1AñadeCliente();
+   				String apellido2 = apellido2AñadeCliente();
+   				String direccion = direccionAñadeCliente();
+   				String dni = dniAñadeCliente();
+   				String telefono = telefonoAñadeCliente();
+   				String email = emailAñadeCliente();
+   				int edad = edadAñadeCliente();
+   				String nacimiento = nacimientoAñadeCliente();
+   				
+   		   		nuevoCliente[IDCliente] = new Cliente (nombre, apellido1, apellido2, direccion, dni, telefono, email, edad, nacimiento);
+   		   		
+   		   		misClientes[IDCliente] = nuevoCliente[IDCliente];
+   		   	
+   		   		System.out.println("Nuevo Cliente:");
+   		   		System.out.println(nuevoCliente[IDCliente]);
+   		   	
+=======
    				Controlador.programaB(sc, IDCliente, misClientes);
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    				IDCliente++;
 
    //PROGRAMA C ------------------------------------------------------------------------------------------------------------------------------				
@@ -49,16 +103,40 @@ public class Principal {
 
    			} else if(respuesta.compareToIgnoreCase("c") == 0) {
    				
+<<<<<<< HEAD
+   				
+   				System.out.println("Cliente actual:");
+   		   		System.out.println(nuevoCliente[IDCliente-1]);
+   				
+   				nuevoCliente[IDCliente-1] = null;
+   				misClientes[IDCliente-1] = nuevoCliente[IDCliente-1];
+   				System.out.println("Cliente eliminado con exito!");
+=======
    				Controlador.programaC(IDCliente, misClientes);
    				IDCliente--;
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    				
    //PROGRAMA D	------------------------------------------------------------------------------------------------------------------------------
    				
    			} else if(respuesta.compareToIgnoreCase("d") == 0) {
    				
+<<<<<<< HEAD
+   				int edadMin = Promocion.edadMinAñadePromo();
+                int edadMax = Promocion.edadMaxAñadePromo();
+                String nombrePromo = Promocion.nombreAñadePromo();
+
+                Promocion nuevaPromo[] = new Promocion[20];
+                   nuevaPromo[IDPromo] = new Promocion ( edadMax, edadMin, nombrePromo);
+                   
+                   System.out.println("Nueva Promocion:");
+                System.out.println(nuevaPromo[IDPromo]);
+            
+                IDPromo++;
+=======
    				Controlador.programaD(sc, IDPromo);
    				IDPromo++;
                 
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    //SALIR	----------------------------------------------------------------------------------------------------------------------------------
                 
    			} else {

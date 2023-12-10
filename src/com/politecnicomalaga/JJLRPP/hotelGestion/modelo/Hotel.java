@@ -1,7 +1,13 @@
 package com.politecnicomalaga.JJLRPP.hotelGestion.modelo;
+<<<<<<< HEAD
+public class Hotel {
+    
+    private static final int NUM_CLIENTES_MAX = 1000;
+=======
 
 import java.util.Scanner;
 import com.politecnicomalaga.JJLRPP.hotelGestion.vista.Principal;
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
 
 public class Hotel {
 
@@ -83,6 +89,25 @@ public class Hotel {
 		
 		Principal.imprimirListadoCliente(IDCliente, misClientes);
     	
+<<<<<<< HEAD
+        for (int i = 0; i< NUM_CLIENTES_MAX && bContinuar == true; i++) {
+        	
+            if (misClientes[i] == null) {
+            	System.out.println("Ingresa tu Nombre");
+            	
+                misClientes[i] = nuevoCliente;  
+                bContinuar = false;
+                return true;
+                //Variable busqueda mas facil?
+                
+            }
+            
+        }
+        
+        return false;
+        
+    }
+=======
 	}
     
     public static void añadirCliente(Scanner sc, int IDCliente, Cliente[] misClientes) {
@@ -130,5 +155,6 @@ public class Hotel {
 	    Principal.imprimirPromocion(IDPromo, nuevaPromo);
 		
 	}
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
 
 }
