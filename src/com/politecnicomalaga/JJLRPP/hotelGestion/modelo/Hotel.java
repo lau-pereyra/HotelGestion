@@ -81,27 +81,8 @@ public class Hotel {
     
     public static void listadoCliente(int IDCliente, Cliente[] misClientes) {
 		
-		int cont;
-			
-		System.out.println("Lista de Clientes:");
-			
-		for (cont = 0; cont < IDCliente; cont++) {
-				
-			if(misClientes[cont] != null) {
-				
-				System.out.println(misClientes[cont]);	
-				System.out.println("----------------------------");	
-				
-			}
-				
-		}
-			
-		if (cont == 0) {
-				
-			System.out.println("No existe ningún cliente");
-				
-		}
-		
+		Principal.imprimirListadoCliente(IDCliente, misClientes);
+    	
 	}
     
     public static void añadirCliente(Scanner sc, int IDCliente, Cliente[] misClientes) {
@@ -115,19 +96,25 @@ public class Hotel {
 		String email = Principal.emailAñadeCliente(sc);
 		int edad = Principal.edadAñadeCliente(sc);
 		String nacimiento = Principal.nacimientoAñadeCliente(sc);
-			
+		
 		misClientes[IDCliente] = new Cliente (nombre, apellido1, apellido2, direccion, dni, telefono, email, edad, nacimiento);
-	   	
-	   	System.out.println("Nuevo Cliente:");
-	   	System.out.println(misClientes[IDCliente]);
+		
+		Principal.imprimirCrearCliente(IDCliente, misClientes);
 		
 	}
 	
 	public static void eliminarCliente(int IDCliente, Cliente[] misClientes) {
 		
-		System.out.println("Cliente Eliminado:");
-	   	System.out.println(misClientes[IDCliente-1]);
-		misClientes[IDCliente-1] = null;
+		if (IDCliente-1<=0) {
+			
+			Principal.imprimirNoBorrarCliente();
+			
+		} else {
+			
+			Principal.imprimirBorrarCliente(IDCliente, misClientes);
+			misClientes[IDCliente-1] = null;
+			
+		}
 		
 	}
 
@@ -139,9 +126,8 @@ public class Hotel {
 
 	    Promocion nuevaPromo[] = new Promocion[20];
 	    nuevaPromo[IDPromo] = new Promocion (edadMax, edadMin, nombrePromo);
-	       
-	    System.out.println("Nueva Promocion:");
-	    System.out.println(nuevaPromo[IDPromo]);
+	    
+	    Principal.imprimirPromocion(IDPromo, nuevaPromo);
 		
 	}
 

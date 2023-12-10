@@ -4,6 +4,7 @@ import java.util.Scanner;
 import com.politecnicomalaga.JJLRPP.hotelGestion.controlador.Controlador;
 import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Cliente;
 import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Hotel;
+import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Promocion;
 
 public class Principal {
 	
@@ -235,4 +236,73 @@ public class Principal {
     	return respuesta;
     	
     }
+	
+	public static void imprimirPromocion(int IDPromo, Promocion[] nuevaPromo) {
+    	
+		System.out.println("Nueva Promocion:");
+		separadores();
+	    System.out.println(nuevaPromo[IDPromo]);
+	    separadores();
+    	
+    }
+	
+	public static void imprimirCrearCliente(int IDCliente, Cliente[] misClientes) {
+    	
+		System.out.println("Nuevo Cliente:");
+	   	separadores();
+	   	System.out.println(misClientes[IDCliente]);
+	   	separadores();
+    	
+    }
+	
+	public static void imprimirBorrarCliente(int IDCliente, Cliente[] misClientes) {
+    	
+		System.out.println("Cliente Eliminado:");
+		separadores();
+	   	System.out.println(misClientes[IDCliente-1]);
+	   	separadores();
+    	
+    }
+	
+	public static void imprimirNoBorrarCliente() {
+    	
+		separadores();
+		System.out.println("No existe ningún cliente");
+	   	separadores();
+    	
+    }
+	
+	public static void imprimirListadoCliente(int IDCliente, Cliente[] misClientes) {
+    	
+		int cont;
+		
+		System.out.println("Lista de Clientes:");
+		separadores();
+			
+		for (cont = 0; cont < IDCliente; cont++) {
+				
+			if(misClientes[cont] != null) {
+				
+				System.out.println(misClientes[cont]);	
+				separadores();
+				
+			}
+				
+		}
+			
+		if (cont == 0) {
+				
+			System.out.println("No existe ningún cliente");
+			separadores();
+				
+		}
+    	
+    }
+	
+	public static void separadores() {
+		
+		System.out.println("----------------------------");
+		
+	}
+	
 }
