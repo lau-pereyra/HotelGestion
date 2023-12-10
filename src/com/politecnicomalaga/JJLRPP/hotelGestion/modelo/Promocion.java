@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Promocion {
 
+<<<<<<< HEAD
     private int edadMax;
     private int edadMin;
     private String nombrePromo;
@@ -90,3 +91,45 @@ public static int edadMaxAñadePromo() {
     
     
 }
+=======
+	private int edadMax;
+	private int edadMin;
+	private String nombrePromo;
+	
+	public Promocion(int edadMax, int edadMin, String nombrePromo) {
+		this.edadMax = edadMax;
+		this.edadMin = edadMin;
+		this.setNombrePromo(nombrePromo);
+	}
+
+	public String getNombrePromo() {
+		return nombrePromo;
+	}
+
+	public void setNombrePromo(String nombrePromo) {
+		this.nombrePromo = nombrePromo;
+	}
+	
+	public int getEdadMax() {
+		return edadMax;
+	}
+
+	public void setEdadMax(int edadMax) {
+		this.edadMax = edadMax;
+	}
+
+	public int getEdadMin() {
+		return edadMin;
+	}
+
+	public void setEdadMin(int edadMin) {
+		this.edadMin = edadMin;
+	}
+	
+	public String toString() {
+        return "- Nombre: " + nombrePromo + "\n" + "- Edad Mínima: " + edadMin + "\n" + "- Edad Máxima: "
+        		+ edadMax ;
+    }
+	
+}
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d

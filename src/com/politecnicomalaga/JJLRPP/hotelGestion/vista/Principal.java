@@ -1,14 +1,15 @@
 package com.politecnicomalaga.JJLRPP.hotelGestion.vista;
 import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Promocion;
 import java.util.Scanner;
-
+import com.politecnicomalaga.JJLRPP.hotelGestion.controlador.Controlador;
 import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Cliente;
-
 import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Hotel;
+import com.politecnicomalaga.JJLRPP.hotelGestion.modelo.Promocion;
 
 public class Principal {
 	
     public static void main(String[] args) {
+<<<<<<< HEAD
         //private Controlador trabajador;
    		boolean seguir = true;
    		String respuesta ;
@@ -22,6 +23,15 @@ public class Principal {
     	Hotel miHotel[] = new Hotel[1];
     	miHotel[0] = new Hotel ("Costa del Sol", "Su Casita", "5 Estrellas", "696969",
     			"+69 696969", "hotel@gmail.com", misClientes);
+=======
+    	
+   		Scanner sc = new Scanner(System.in);
+   		boolean seguir = true;
+   		String respuesta;
+   		
+   		Cliente[] misClientes = Hotel.crearClientes();
+   		int IDCliente = 0 , IDPromo= 0;
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    		
    		while(seguir) {
 
@@ -41,6 +51,7 @@ public class Principal {
 
    			if (respuesta.compareToIgnoreCase("a") == 0) {
    				
+<<<<<<< HEAD
    				int cont;
    				
    				System.out.println("Lista de Clientes:");
@@ -56,10 +67,15 @@ public class Principal {
    				if (cont == 0) {
    					System.out.println("No existe ningún cliente");
    				}
+=======
+				Controlador.programaA(IDCliente, misClientes);
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
 
-   //PROGRAMA B ------------------------------------------------------------------------------------------------------------------------------				
+   //PROGRAMA B ------------------------------------------------------------------------------------------------------------------------------	
+				
    			} else if(respuesta.compareToIgnoreCase("b") == 0) {
    				
+<<<<<<< HEAD
    				String nombre = nombreAñadeCliente();
    				String apellido1 = apellido1AñadeCliente();
    				String apellido2 = apellido2AñadeCliente();
@@ -77,6 +93,9 @@ public class Principal {
    		   		System.out.println("Nuevo Cliente:");
    		   		System.out.println(nuevoCliente[IDCliente]);
    		   	
+=======
+   				Controlador.programaB(sc, IDCliente, misClientes);
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    				IDCliente++;
 
    //PROGRAMA C ------------------------------------------------------------------------------------------------------------------------------				
@@ -84,6 +103,7 @@ public class Principal {
 
    			} else if(respuesta.compareToIgnoreCase("c") == 0) {
    				
+<<<<<<< HEAD
    				
    				System.out.println("Cliente actual:");
    		   		System.out.println(nuevoCliente[IDCliente-1]);
@@ -91,11 +111,16 @@ public class Principal {
    				nuevoCliente[IDCliente-1] = null;
    				misClientes[IDCliente-1] = nuevoCliente[IDCliente-1];
    				System.out.println("Cliente eliminado con exito!");
+=======
+   				Controlador.programaC(IDCliente, misClientes);
+   				IDCliente--;
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    				
    //PROGRAMA D	------------------------------------------------------------------------------------------------------------------------------
    				
    			} else if(respuesta.compareToIgnoreCase("d") == 0) {
    				
+<<<<<<< HEAD
    				int edadMin = Promocion.edadMinAñadePromo();
                 int edadMax = Promocion.edadMaxAñadePromo();
                 String nombrePromo = Promocion.nombreAñadePromo();
@@ -107,7 +132,13 @@ public class Principal {
                 System.out.println(nuevaPromo[IDPromo]);
             
                 IDPromo++;
+=======
+   				Controlador.programaD(sc, IDPromo);
+   				IDPromo++;
+                
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
    //SALIR	----------------------------------------------------------------------------------------------------------------------------------
+                
    			} else {
    				
    				seguir = false;
@@ -115,7 +146,9 @@ public class Principal {
    			}
    			
    			if (seguir) {
-   				pulsaEnter();
+   				
+   				pulsaEnter(sc);
+   				
    			}
 
    		}	
@@ -124,10 +157,9 @@ public class Principal {
         
     }
 	
-    public static String dniAñadeCliente() {
+    public static String dniAñadeCliente(Scanner sc) {
     	
-    	Scanner sc = new Scanner(System.in);
-    	String respuesta = "";
+    	String respuesta;
     	
     	System.out.println("Introduce el DNI");
     	
@@ -137,10 +169,9 @@ public class Principal {
     	
     }
     
-    public static String nombreAñadeCliente() {
+    public static String nombreAñadeCliente(Scanner sc) {
     	
-    	Scanner sc = new Scanner(System.in);
-    	String respuesta = "";
+    	String respuesta;
     	
     	System.out.println("Introduce tu Nombre");
     	
@@ -150,10 +181,9 @@ public class Principal {
     	
     }
     
-    public static String apellido1AñadeCliente() {
+    public static String apellido1AñadeCliente(Scanner sc) {
     	
-    	Scanner sc = new Scanner(System.in);
-    	String respuesta = "";
+    	String respuesta;
     	
     	System.out.println("Introduce tu Primer Apellido");
     	
@@ -163,10 +193,9 @@ public class Principal {
     	
     }
     
-    public static String apellido2AñadeCliente() {
+    public static String apellido2AñadeCliente(Scanner sc) {
 	
-    	Scanner sc = new Scanner(System.in);
-    	String respuesta = "";
+    	String respuesta;
     	
     	System.out.println("Introduce tu Segundo Apellido");
     	
@@ -176,10 +205,9 @@ public class Principal {
     	
     }
     
-    public static String direccionAñadeCliente() {
+    public static String direccionAñadeCliente(Scanner sc) {
     	
-    	Scanner sc = new Scanner(System.in);
-    	String respuesta = "";
+    	String respuesta;
     	
     	System.out.println("Introduce tu Direccion");
     	
@@ -189,10 +217,9 @@ public class Principal {
     	
     }
     
-    public static String emailAñadeCliente() {
+    public static String emailAñadeCliente(Scanner sc) {
     	
-    	Scanner sc = new Scanner(System.in);
-    	String respuesta = "";
+    	String respuesta;
     	
     	System.out.println("Introduce el Email");
     	
@@ -202,10 +229,9 @@ public class Principal {
     	
     }
     
-    public static String telefonoAñadeCliente() {
+    public static String telefonoAñadeCliente(Scanner sc) {
     	
-    	Scanner sc = new Scanner(System.in);
-    	String respuesta = "";
+    	String respuesta;
     	
     	System.out.println("Introduce el Teléfono");
     	
@@ -215,9 +241,8 @@ public class Principal {
     	
     }
 
-	public static int edadAñadeCliente() {
+	public static int edadAñadeCliente(Scanner sc) {
 	
-		Scanner sc = new Scanner(System.in);
 		String respuesta;
 		int iRespuesta;
 	
@@ -230,9 +255,8 @@ public class Principal {
 		
 	}
 	
-	public static String nacimientoAñadeCliente() {
+	public static String nacimientoAñadeCliente(Scanner sc) {
 		
-		Scanner sc = new Scanner(System.in);
 		String respuesta = "";
 	
 		System.out.println("Introduce la Fecha de Nacimiento");
@@ -243,13 +267,120 @@ public class Principal {
 		
 	}
 	
-	public static void pulsaEnter() {
-		
-		Scanner sc = new Scanner(System.in);
-		String respuesta = "";
+	public static void pulsaEnter(Scanner sc) {
 		
 		System.out.println("Pulsa ENTER para volver al menú...");
-		respuesta = sc.nextLine();
+		@SuppressWarnings("unused")
+		String respuesta = sc.nextLine();
 			
 	}
+	
+	public static int edadMaxAñadePromo(Scanner sc) {
+		
+		String respuesta;
+		int iRespuesta;
+	
+		System.out.println("Introduce la Edad Maxima para la promocion");
+	
+		respuesta = sc.nextLine();
+		iRespuesta = Integer.valueOf(respuesta);
+	
+		return iRespuesta;
+		
+	}
+	
+	public static int edadMinAñadePromo(Scanner sc) {
+		
+		String respuesta;
+		int iRespuesta;
+	
+		System.out.println("Introduce la Edad Minima para la promocion");
+	
+		respuesta = sc.nextLine();
+		iRespuesta = Integer.valueOf(respuesta);
+	
+		return iRespuesta;
+		
+	}
+	
+	public static String nombreAñadePromo(Scanner sc) {
+    	
+    	String respuesta = "";
+    	
+    	System.out.println("Introduce un Nombre para la promocion.");
+    	
+    	respuesta = sc.nextLine();
+    	
+    	return respuesta;
+    	
+    }
+	
+	public static void imprimirPromocion(int IDPromo, Promocion[] nuevaPromo) {
+    	
+		System.out.println("Nueva Promocion:");
+		separadores();
+	    System.out.println(nuevaPromo[IDPromo]);
+	    separadores();
+    	
+    }
+	
+	public static void imprimirCrearCliente(int IDCliente, Cliente[] misClientes) {
+    	
+		System.out.println("Nuevo Cliente:");
+	   	separadores();
+	   	System.out.println(misClientes[IDCliente]);
+	   	separadores();
+    	
+    }
+	
+	public static void imprimirBorrarCliente(int IDCliente, Cliente[] misClientes) {
+    	
+		System.out.println("Cliente Eliminado:");
+		separadores();
+	   	System.out.println(misClientes[IDCliente-1]);
+	   	separadores();
+    	
+    }
+	
+	public static void imprimirNoBorrarCliente() {
+    	
+		separadores();
+		System.out.println("No existe ningún cliente");
+	   	separadores();
+    	
+    }
+	
+	public static void imprimirListadoCliente(int IDCliente, Cliente[] misClientes) {
+    	
+		int cont;
+		
+		System.out.println("Lista de Clientes:");
+		separadores();
+			
+		for (cont = 0; cont < IDCliente; cont++) {
+				
+			if(misClientes[cont] != null) {
+				
+				System.out.println(misClientes[cont]);	
+				separadores();
+				
+			}
+				
+		}
+			
+		if (cont == 0) {
+				
+			System.out.println("No existe ningún cliente");
+			separadores();
+				
+		}
+    	
+    }
+	
+	public static void separadores() {
+		
+		System.out.println("----------------------------");
+		
+	}
+	
 }

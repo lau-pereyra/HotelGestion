@@ -1,19 +1,27 @@
 package com.politecnicomalaga.JJLRPP.hotelGestion.modelo;
+<<<<<<< HEAD
 public class Hotel {
     
     private static final int NUM_CLIENTES_MAX = 1000;
+=======
 
+import java.util.Scanner;
+import com.politecnicomalaga.JJLRPP.hotelGestion.vista.Principal;
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
+
+public class Hotel {
+
+	private static final int NUM_CLIENTES_MAX = 1000;
+	
     private String nombre;
     private String direccion;
     private String descripcion;
     private String codigoPostal;
     private String telefono;
     private String email;
-
-    private Cliente[] misClientes;
     
     public Hotel(String nombre, String direccion, String descripcion, String codigoPostal, 
-            String telefono, String email, Cliente[] misClientes) {
+            String telefono, String email) {
 
         this.nombre = nombre;
         this.direccion = direccion;
@@ -22,9 +30,13 @@ public class Hotel {
         this.telefono = telefono;
         this.email = email;
         
-        this.misClientes = new Cliente[NUM_CLIENTES_MAX];
     }
     
+    public static Cliente[] crearClientes() {
+    	Cliente misClientes[] = new Cliente[NUM_CLIENTES_MAX];
+        return misClientes;
+    }
+	
     public String getNombre() {
         return nombre;
     }
@@ -73,25 +85,11 @@ public class Hotel {
         this.email = email;
     }
     
-    public String toString() {
-        return "Hotel: " + nombre + ", Dirección: " + direccion;
-    }
-    
-    public Cliente[] listaDeClientes() {
-        
-        Cliente[] copia;
-        
-        copia = new Cliente[NUM_CLIENTES_MAX];
-        
-        // Aquí hay que copiar cada uno de mis clientes a la nueva lista ARRAY
-        
-        return copia;
-    }
-    
-    public boolean add(Cliente nuevoCliente) {
-        
-    	boolean bContinuar = true;
+    public static void listadoCliente(int IDCliente, Cliente[] misClientes) {
+		
+		Principal.imprimirListadoCliente(IDCliente, misClientes);
     	
+<<<<<<< HEAD
         for (int i = 0; i< NUM_CLIENTES_MAX && bContinuar == true; i++) {
         	
             if (misClientes[i] == null) {
@@ -109,5 +107,54 @@ public class Hotel {
         return false;
         
     }
+=======
+	}
+    
+    public static void añadirCliente(Scanner sc, int IDCliente, Cliente[] misClientes) {
+		
+		String nombre = Principal.nombreAñadeCliente(sc);
+		String apellido1 = Principal.apellido1AñadeCliente(sc);
+		String apellido2 = Principal.apellido2AñadeCliente(sc);
+		String direccion = Principal.direccionAñadeCliente(sc);
+		String dni = Principal.dniAñadeCliente(sc);
+		String telefono = Principal.telefonoAñadeCliente(sc);
+		String email = Principal.emailAñadeCliente(sc);
+		int edad = Principal.edadAñadeCliente(sc);
+		String nacimiento = Principal.nacimientoAñadeCliente(sc);
+		
+		misClientes[IDCliente] = new Cliente (nombre, apellido1, apellido2, direccion, dni, telefono, email, edad, nacimiento);
+		
+		Principal.imprimirCrearCliente(IDCliente, misClientes);
+		
+	}
+	
+	public static void eliminarCliente(int IDCliente, Cliente[] misClientes) {
+		
+		if (IDCliente-1<=0) {
+			
+			Principal.imprimirNoBorrarCliente();
+			
+		} else {
+			
+			Principal.imprimirBorrarCliente(IDCliente, misClientes);
+			misClientes[IDCliente-1] = null;
+			
+		}
+		
+	}
+
+	public static void crearPromocion(Scanner sc, int IDPromo) {
+		
+		int edadMin = Principal.edadMinAñadePromo(sc);
+	    int edadMax = Principal.edadMaxAñadePromo(sc);
+	    String nombrePromo = Principal.nombreAñadePromo(sc);
+
+	    Promocion nuevaPromo[] = new Promocion[20];
+	    nuevaPromo[IDPromo] = new Promocion (edadMax, edadMin, nombrePromo);
+	    
+	    Principal.imprimirPromocion(IDPromo, nuevaPromo);
+		
+	}
+>>>>>>> b2e530eaec8ec1ce98a70906a5df19a1cf20035d
 
 }
