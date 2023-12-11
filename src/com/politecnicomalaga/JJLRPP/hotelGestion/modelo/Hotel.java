@@ -105,7 +105,7 @@ public class Hotel {
 	
 	public static void eliminarCliente(int IDCliente, Cliente[] misClientes) {
 		
-		if (IDCliente-1<=0) {
+		if (IDCliente-1<0) {
 			
 			Principal.imprimirNoBorrarCliente();
 			
