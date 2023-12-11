@@ -50,7 +50,11 @@ public class Principal {
    			} else if(respuesta.compareToIgnoreCase("c") == 0) {
    				
    				Controlador.programaC(IDCliente, misClientes);
-   				IDCliente--;
+   				if (IDCliente > 0) {
+   					
+   					IDCliente--;
+   					
+   				}
    				
    //PROGRAMA D	------------------------------------------------------------------------------------------------------------------------------
    				
